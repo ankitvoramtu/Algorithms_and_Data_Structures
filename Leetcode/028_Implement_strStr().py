@@ -5,12 +5,8 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-
         # Rephrase: if needle is substring of haystack
-        # if len(needle) > len(haystack):
-        # return -1
-
-        # Normal case
+        # Normal case include special already
         for i in range(0, len(haystack) - len(needle) + 1):
             j = 0
             while j < len(needle):
@@ -21,3 +17,5 @@ class Solution(object):
             if j == len(needle):
                 return i
         return -1
+# Time: O(n*m)
+# Space: O(1)

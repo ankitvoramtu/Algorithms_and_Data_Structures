@@ -10,7 +10,9 @@ class Solution(object):
         while i >= 0 and s[i] == " ":
             i = i - 1
         # Count chacters till meet space or the head of the string
-        while i >= 0 and s[i] != " ":
-            i = i - 1
-            ret += 1
-        return ret
+        j = i
+        while j >= 0 and s[j] != " ":
+            j -= 1
+        return i - j
+# Time: O(n)
+# Space: O(1)

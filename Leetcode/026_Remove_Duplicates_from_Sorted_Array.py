@@ -15,8 +15,8 @@ class Solution(object):
             if nums[j] != nums[j - 1]:  # if j found unique elements ahead
                 i += 1  # i move one step and get the new value
                 nums[i] = nums[j]
-                j = j + 1
-            else:  # j did not find new value, j move forward
-                j = j + 1
+            j = j + 1
 
         return i + 1
+# Time: O(n)
+# Space: O(1)

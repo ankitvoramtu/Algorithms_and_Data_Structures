@@ -24,3 +24,5 @@ class Solution(object):
             P0 = P1
 
         return dummy.next
+# Time: O(n)
+# Space: O(1)

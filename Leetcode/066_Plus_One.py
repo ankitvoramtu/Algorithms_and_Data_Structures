@@ -4,19 +4,13 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-
-        # Add 1 to the last digit, result might be 10
-        digits[-1] += 1
-
-        i = len(digits) - 1
-        while i >= 1 and digits[i] == 10:
-            digits[i] = 0
-            digits[i - 1] += 1
-            i = i - 1
-
-        # Check first digit
-        if digits[0] == 10:
-            digits[0] = 0
-            digits = [1] + digits
-
-        return digits
+        carry = 1
+        for i in range(len(digits) - 1, -1, -1):
+            tmp = digits[i]
+            digits[i] = (tmp + carry) % 10
+            carry = (tmp + carry) // 10
+            if carry == 0:
+                return digits
+        return [1] + digits
+# Time: O(n)
+# Space: O(1)
