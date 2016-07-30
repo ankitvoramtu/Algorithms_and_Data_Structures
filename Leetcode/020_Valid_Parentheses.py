@@ -25,3 +25,5 @@ class Solution:
             return True
         else:
             return False
+# Time: O(n)
+# Space: O(n)

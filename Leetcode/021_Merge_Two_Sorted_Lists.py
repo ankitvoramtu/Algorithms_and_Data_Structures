@@ -14,12 +14,6 @@ class Solution:
         dummy = ListNode(None)
         p3 = dummy
 
-        # if either is empty:
-        if l1 is None:
-            return l2
-        if l2 is None:
-            return l1
-
         # Normal case:
         while l1 is not None and l2 is not None:
             if l1.val < l2.val:
@@ -38,3 +32,6 @@ class Solution:
             p3.next = l1
 
         return dummy.next
+
+# Time: O(n)
+# Space: O(n)
