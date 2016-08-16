@@ -7,17 +7,22 @@ class Solution(object):
         :type n: int
         :rtype: void Do not return anything, modify nums1 in-place instead.
         """
-       	nums1 = nums1 + [0] * n
-       	
+
         i = m - 1
         j = n - 1
-        k = m + n - 1
-
         for k in range(m + n - 1, -1, -1):
-        	if nums1[i] >= nums2[j]:
-        		nums1[k] = nums1[i]
-        		i = i - 1
-        	else:
-        		nums1[k] = nums2[j]
-        		j = j - 1
-        return nums1
+            if i >= 0 and j >= 0:
+                if nums1[i] >= nums2[j]:
+                    # print 'i', i
+                    nums1[k] = nums1[i]
+                    i = i - 1
+                else:
+                    # print 'j:', j
+                    nums1[k] = nums2[j]
+                    j = j - 1
+            elif j >= 0:
+                nums1[k] = nums2[j]
+                j = j - 1
+
+# Space = O(1)
+# Time = O(m + n)

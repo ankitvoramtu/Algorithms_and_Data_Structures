@@ -21,3 +21,6 @@ class Solution(object):
             result = ret + str(count) + result[-1]  # update result
 
         return result
+
+# Space = len(str)
+# Time = en(str) * n

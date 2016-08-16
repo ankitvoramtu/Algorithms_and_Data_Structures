@@ -13,3 +13,6 @@ class Solution(object):
                 ret = ret - 2 * ROMAN[s[i - 1]]
             ret = ret + ROMAN[s[i]]
         return ret
+
+# Space = O(1)
+# Time = O(n)

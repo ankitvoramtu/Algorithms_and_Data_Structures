@@ -24,3 +24,6 @@ class Solution(object):
             pointer2 = pointer2.next
         pointer1.next = pointer2
         return dummy.next
+
+# Space: O(1)
+# Time: O(n)
