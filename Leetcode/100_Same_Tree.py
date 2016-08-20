@@ -15,15 +15,13 @@ class Solution(object):
         """
         if p is None and q is None:
             return True
-        if p is None and q is not None:
-            return False
-        if p is not None and q is None:
+        if p is None or q is None:
             return False
         return p.val == q.val and self.isSameTree(p.left, q.left) and \
             self.isSameTree(p.right, q.right)
 
-# Space: balanced: O(logn)
-# Time: O(n)
+# Space: worst case, unbalanced tree O(n), balanced O(logn), same to depth ????
+# Time: O(n) ???? 
 
 # Non recursive Method:
 class Solution(object):
@@ -33,22 +31,20 @@ class Solution(object):
         :type q: TreeNode
         :rtype: bool
         """
-        if p is None and q is None:
-            return True
-        if p is None and q is not None:
-            return False
-        if p is not None and q is None:
-            return False
 
         l = []
-        l.append(p.val)
-        l.append(q.val)
-        while l != []:
-            a = l.pop()
-            b = l.pop()
-            if a != b:
+        l.append((p, q))
+        while len(l) > 0:
+            node1, node2 = l.pop(0)
+            if node1 is None and node2 is None:
+                continue  # Go to next cycle, skip rest of current cycle
+            if node1 is None or node2 is None:
                 return False
-            
+            if node1.val != node2.val:
+                return False
+            l.append((node1.left, node2.left))  # push two groups on
+            l.append((node1.right, node2.right))
+        return True
 
-# Space: balanced: O(logn)
+# Space: worst case, unbalanced tree O(n), balanced O(logn), same to depth
 # Time: O(n)
