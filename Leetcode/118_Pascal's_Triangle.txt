@@ -1,7 +1,5 @@
-118. Pascal's Triangle  QuestionEditorial Solution  My Submissions
-Total Accepted: 95738
-Total Submissions: 274218
-Difficulty: Easy
+118. Pascal's Triangle  
+
 Given numRows, generate the first numRows of Pascal's triangle.
 
 For example, given numRows = 5,

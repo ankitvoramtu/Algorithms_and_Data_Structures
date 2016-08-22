@@ -1,4 +1,4 @@
-110. Balanced Binary Tree  QuestionEditorial Solution  My Submissions
+110. Balanced Binary Tree  
 
 Given a binary tree, determine if it is height-balanced.
 
