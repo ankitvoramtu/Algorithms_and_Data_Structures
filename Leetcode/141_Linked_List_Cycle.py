@@ -11,13 +11,16 @@ class Solution(object):
         :rtype: bool
         """
         if head is None:
-        	return False
-        P1 = head
-        P2 = P1.next
+            return False
+        p1 = head
+        p2 = p1.next
         while True:
-        	if P2 is None or P2.next is None:
-        		return False
-        	if P1 == P2:
-        		return True
-        	P1 = P1.next
-        	P2 = P2.next.next
+            if p2 is None or p2.next is None:
+                return False
+            if p1 == p2:
+                return True
+            p1 = p1.next
+            p2 = p2.next.next
+
+#  Time: O(n)
+#  Space: O(1)

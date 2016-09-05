@@ -1,10 +1,31 @@
-Compare two version numbers version1 and version2.
-If version1 > version2 return 1, if version1 < version2 return -1, otherwise return 0.
+class Solution(object):
+    def compareVersion(self, version1, version2):
+        """
+        :type version1: str
+        :type version2: str
+        :rtype: int
+        """
+        list1 = version1.split('.')
+        list2 = version2.split('.')
 
-You may assume that the version strings are non-empty and contain only digits and the . character.
-The . character does not represent a decimal point and is used to separate number sequences.
-For instance, 2.5 is not "two and a half" or "half way to version three", it is the fifth second-level revision of the second first-level revision.
+        n = abs(len(list1) - len(list2))
 
-Here is an example of version numbers ordering:
+        if len(list1) < len(list2):
+            for i in range(0, n):
+                list1.append('0')
+        else:
+            for i in range(0, n):
+                list2.append('0')
 
-0.1 < 1.1 < 1.2 < 13.37
+        i = 0
+        while i < len(list1) and i < len(list2):
+            if int(list1[i]) > int(list2[i]):
+                return 1
+            if int(list1[i]) < int(list2[i]):
+                return -1
+            else:
+                i = i + 1
+        return 0
+
+# Time: O(n)
+# Space: O(n)

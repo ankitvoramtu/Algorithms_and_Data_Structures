@@ -1,11 +1,15 @@
-Given a positive integer, return its corresponding column title as appear in an Excel sheet.
-
-For example:
-
-    1 -> A
-    2 -> B
-    3 -> C
-    ...
-    26 -> Z
-    27 -> AA
-    28 -> AB 
+class Solution(object):
+    def convertToTitle(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        if n <= 0:
+        	raise ValueError (" input is not valid!")
+        ret = ""
+        while n > 0:
+            n = n - 1
+            c = chr(ord('A') + n % 26)
+            n = n / 26
+            ret = str(c) + ret
+        return ret

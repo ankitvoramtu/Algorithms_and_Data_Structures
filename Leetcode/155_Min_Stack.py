@@ -16,28 +16,23 @@ class MinStack(object):
         if self.stack2 == [] or x <= self.stack2[-1]:
             self.stack2.append(x)
 
-
     def pop(self):
         """
         :rtype: void
         """
         if self.stack1 == []:
-            pass
+            raise IndexError("pop from empty list")
         else:
-            x = self.stack1[-1]
-            self.stack1.pop()
-            if self.stack2 == []:
-                pass
-            elif x == self.stack2[-1]:
+            x = self.stack1.pop()
+            if x == self.stack2[-1]:
                 self.stack2.pop()
-
 
     def top(self):
         """
         :rtype: int
         """
         if self.stack1 == []:
-            return None
+            raise IndexError("pop from empty list")
         else:
             return self.stack1[-1]
 
@@ -46,7 +41,7 @@ class MinStack(object):
         :rtype: int
         """
         if self.stack2 == []:
-            return None
+            raise IndexError("pop from empty list")
         else:
             return self.stack2[-1]
 
