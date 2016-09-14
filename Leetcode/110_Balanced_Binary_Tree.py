@@ -11,3 +11,16 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
+        return helper(root) >= 0
+
+    def helper(root):
+    	if root is None:
+    		return 0
+
+    	left = helper(root.left)
+    	right = helper(root.right)
+    	if left < 0 or right < 0:
+    		return -1
+    	if abs(left - right) > 1:
+    		return -1
+    	return max(left, right) + 1
