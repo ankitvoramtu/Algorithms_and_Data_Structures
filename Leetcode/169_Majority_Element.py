@@ -13,3 +13,6 @@ class Solution(object):
             else:
                 count = count - 1
         return candidate
+
+# Time:O(n)
+# Space:O(1)

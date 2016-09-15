@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: str
         """
         if n <= 0:
-        	raise ValueError (" input is not valid!")
+            raise ValueError(" input is not valid!")
         ret = ""
         while n > 0:
             n = n - 1
@@ -13,3 +13,6 @@ class Solution(object):
             n = n / 26
             ret = str(c) + ret
         return ret
+
+# Time: O(logn)
+# Space: O(1)

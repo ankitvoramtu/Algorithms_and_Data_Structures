@@ -8,24 +8,25 @@ class Solution(object):
         list1 = version1.split('.')
         list2 = version2.split('.')
 
-        n = abs(len(list1) - len(list2))
-
-        if len(list1) < len(list2):
-            for i in range(0, n):
-                list1.append('0')
-        else:
-            for i in range(0, n):
-                list2.append('0')
-
+        n = max(len(list1), len(list2))
+        m = min(len(list1), len(list2))
         i = 0
-        while i < len(list1) and i < len(list2):
-            if int(list1[i]) > int(list2[i]):
-                return 1
-            if int(list1[i]) < int(list2[i]):
-                return -1
+        while i < n:
+            if i < m:
+                if int(list1[i]) > int(list2[i]):
+                    return 1
+                if int(list1[i]) < int(list2[i]):
+                    return -1
             else:
-                i = i + 1
+                if len(list1) > m:
+                    if int(list1[i]) > 0:
+                        return 1
+                else:
+                    if int(list2[i]) > 0:
+                        return -1
+            i = i + 1
         return 0
+
 
 # Time: O(n)
 # Space: O(n)

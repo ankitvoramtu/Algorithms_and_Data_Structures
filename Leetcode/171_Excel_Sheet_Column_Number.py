@@ -5,8 +5,9 @@ class Solution(object):
         :rtype: int
         """
         ret = 0
-        for i in range(1, len(s) + 1):
-            dig = ord(s[-i]) - ord("A") + 1
-            cur = dig * 26 ** i
-            ret = ret + cur
+        for i in range(0, len(s)):
+            ret = ret * 26 + (ord(s[i]) - ord('A') + 1)
         return ret
+
+# Time: O(n)
+# Space:O(1)
