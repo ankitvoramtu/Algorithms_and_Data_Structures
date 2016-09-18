@@ -1,13 +1,12 @@
+
 class Solution(object):
     def isPowerOfTwo(self, n):
         """
         :type n: int
         :rtype: bool
         """
-        i = 0
-        while n / 2 ** i  > 0:
-        	if n % (2 ** i) == 0:
-        		return True
-        	else:
-        		i = i + 1
+        if n != 0 and n & (n - 1) == 0:
+            return True
         return False
+# Time: O(1)
+# Space: O(1)

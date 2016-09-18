@@ -10,8 +10,6 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        dummy = ListNode(None)
-        dummy.next = head
         tmp = head
 
         ret = None
@@ -22,3 +20,24 @@ class Solution(object):
             ret = tmp
             tmp = p1
         return ret
+
+# Time: O(n)
+# Space: O(1)
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if head is None or head.next is None:
+            return head
+        p = head.next
+        ret = self.reverseList(head.next)
+        p.next = head
+        head.next = None
+        return ret
+
+# Time: O(n)
+# Space: O(n)
+

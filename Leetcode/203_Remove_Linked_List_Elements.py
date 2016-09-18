@@ -15,14 +15,12 @@ class Solution(object):
         dummy.next = head
 
         p1 = dummy
-        p2 = head
-        while p2 is not None:
-        	if p2.val != val:
-        		p1.next = p2
-        		p1 = p2
-        	p2 = p2.next
-        p1.next = None
+        while p1.next is not None:
+            if p1.next.val != val:
+                p1 = p1.next
+            else:
+                p1.next = p1.next.next
         return dummy.next
 
-# Space: O(1)
 # Time: O(n)
+# Space: O(1)

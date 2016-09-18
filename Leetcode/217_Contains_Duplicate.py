@@ -5,12 +5,14 @@ class Solution(object):
         :rtype: bool
         """
         from sets import Set
-        
+
         distinct = Set()
         for e in nums:
-        	if e in distinct:
-        		return True
-        	else:
-        		distinct.add(e)
+            if e in distinct:
+                return True
+            else:
+                distinct.add(e)
         return False
-        
+
+# Time: O(n)
+# Space: O(n)

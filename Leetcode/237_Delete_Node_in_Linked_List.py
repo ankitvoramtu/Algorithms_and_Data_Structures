@@ -12,3 +12,6 @@ class Solution(object):
         """
         node.val = node.next.val
         node.next = node.next.next
+
+# Time: O(1)
+# Space:O(1)
