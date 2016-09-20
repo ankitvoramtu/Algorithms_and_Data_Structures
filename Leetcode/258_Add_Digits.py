@@ -4,12 +4,14 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
-        while num > 9:       	
-	        s = str(num)
-	        num = 0
-	        for i in range(0, len(s)):
-	        	num = num + int(s[i])
-	    return num
+        while ret > 9:
+            num = ret
+            ret = 0
+	        while num > 0:
+                dig = num % 10
+	        	ret = ret + digt
+                num = num / 10
+	    return ret
 
 
 ???????????
