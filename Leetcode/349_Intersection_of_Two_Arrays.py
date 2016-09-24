@@ -5,4 +5,12 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        
+        nums1 = set(nums1)
+        nums2 = list(set(nums2))
+        ret = []
+        for e in nums2:
+            if e in nums1:
+                ret.append(e)
+        return ret
+# Time: O(n)
+# Space: O(n)

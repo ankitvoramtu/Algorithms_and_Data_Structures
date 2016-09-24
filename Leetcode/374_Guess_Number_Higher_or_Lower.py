@@ -9,4 +9,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        
+        l = 1
+        r  = n
+        while l <= r:
+            m = l + (r - l) / 2
+            if guess(m) == 0:
+                return m
+            elif guess(m) == -1:
+                r = m - 1
+            else:
+                l = m + 1
+        return -1
+# Time: O(logn)
+# Space: O(1)
